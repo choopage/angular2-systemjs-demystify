@@ -9,19 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var parent_transclusion_component_1 = require('./parent-transclusion.component');
-var DemoApp = (function () {
-    function DemoApp() {
-        this.name = 'world Jek';
+var HeadTransclusionComponent = (function () {
+    function HeadTransclusionComponent() {
     }
-    DemoApp = __decorate([
+    HeadTransclusionComponent.prototype.ngOnInit = function () {
+        console.log('header', this.header);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], HeadTransclusionComponent.prototype, "header", void 0);
+    HeadTransclusionComponent = __decorate([
         core_1.Component({
-            selector: 'demo-app',
-            template: "\n        <div>hello {{name}}</div>\n        \n        <parent-trans></parent-trans>\n    ",
-            directives: [parent_transclusion_component_1.ParentTransclusionComponent]
+            selector: '[trans]',
+            template: "\n        <div>{{header}}</div>\n        \n        <ng-content></ng-content>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], DemoApp);
-    return DemoApp;
+    ], HeadTransclusionComponent);
+    return HeadTransclusionComponent;
 }());
-exports.DemoApp = DemoApp;
+exports.HeadTransclusionComponent = HeadTransclusionComponent;

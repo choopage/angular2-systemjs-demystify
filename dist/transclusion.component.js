@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var parent_transclusion_component_1 = require('./parent-transclusion.component');
-var DemoApp = (function () {
-    function DemoApp() {
-        this.name = 'world Jek';
+var head_transclusion_component_1 = require('./head-transclusion.component');
+var TransclusionComponent = (function () {
+    function TransclusionComponent() {
     }
-    DemoApp = __decorate([
+    TransclusionComponent = __decorate([
         core_1.Component({
-            selector: 'demo-app',
-            template: "\n        <div>hello {{name}}</div>\n        \n        <parent-trans></parent-trans>\n    ",
-            directives: [parent_transclusion_component_1.ParentTransclusionComponent]
+            selector: 'transclusion-component',
+            template: "\n        <div trans header=\"Jek Bao Choo\">\n            This is from Transclusion Component\n            Remember that the header input is header, not [header]\n        </div>\n    ",
+            directives: [head_transclusion_component_1.HeadTransclusionComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], DemoApp);
-    return DemoApp;
+    ], TransclusionComponent);
+    return TransclusionComponent;
 }());
-exports.DemoApp = DemoApp;
+exports.TransclusionComponent = TransclusionComponent;

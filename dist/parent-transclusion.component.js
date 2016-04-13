@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var parent_transclusion_component_1 = require('./parent-transclusion.component');
-var DemoApp = (function () {
-    function DemoApp() {
-        this.name = 'world Jek';
+var child_transclusion_component_1 = require('./child-transclusion.component');
+var ParentTransclusionComponent = (function () {
+    function ParentTransclusionComponent() {
     }
-    DemoApp = __decorate([
+    ParentTransclusionComponent = __decorate([
         core_1.Component({
-            selector: 'demo-app',
-            template: "\n        <div>hello {{name}}</div>\n        \n        <parent-trans></parent-trans>\n    ",
-            directives: [parent_transclusion_component_1.ParentTransclusionComponent]
+            selector: 'parent-trans',
+            template: "\n        <div child-trans header=\"Jek Bao Choo\">\n            This is parent transclusion component where the ng-content is used to render me!!!\n            <br>\n            //Remember that the header input is header, not [header] but why???\n        </div>\n    ",
+            directives: [child_transclusion_component_1.ChildTransclusionComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], DemoApp);
-    return DemoApp;
+    ], ParentTransclusionComponent);
+    return ParentTransclusionComponent;
 }());
-exports.DemoApp = DemoApp;
+exports.ParentTransclusionComponent = ParentTransclusionComponent;
